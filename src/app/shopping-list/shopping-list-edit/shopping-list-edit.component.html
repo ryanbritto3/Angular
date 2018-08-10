@@ -1,0 +1,48 @@
+<div class="row">
+  <form class="form-inline">
+    <div class="col-md-3">
+      <div class="form-group">
+        <label for="recipeName">Recipe Name:</label>
+        <br>
+        <input type="text" class="form-control" id="recipeName">
+      </div>
+
+
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <br>
+        <input type="number" class="form-control" id="quantity">
+      </div>
+    </div>
+  </form>
+  <div class="col-md-6">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <button type="button" class="btn btn-primary">Add</button>
+    <button type="button" class="btn btn-danger">Delete</button>
+    <button type="button" class="btn btn-default">Clear</button>
+  </div>
+  <div class="col-md-6"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>Available Ingredients:</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let i of ingredients;">
+            <span class="badge">{{ i.quantity }}</span>
+            {{ i.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6"></div>
+</div>

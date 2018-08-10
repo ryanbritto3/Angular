@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-12">
+    <img [src]="recipe.img_url" alt="Recipe Image">
+    <!-- <h1>Hi there</h1> -->
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h2>{{ recipe.name }}</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p>{{ recipe.description }}</p>
+  </div>
+</div>
+
+<!-- Single button -->
+<div class="row">
+  <div class="col-md-12">
+
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Manage
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="#">Add</a>
+        </li>
+        <li>
+          <a href="#">Delete</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr>
+<h3>Ingredients:</h3>
+<div class="row">
+  <div class="col-md-6">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let i of ingredients;">
+        <span class="badge">{{ i.quantity }}</span>
+        {{ i.name }}
+      </li>
+    </ul>
+  </div>
+</div>

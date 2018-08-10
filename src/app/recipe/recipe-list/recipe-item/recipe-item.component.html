@@ -1,0 +1,22 @@
+<!-- <a href="#" class="list-group-item list-group-item-action">
+  <div class="media">
+    <div class="media-left">
+      <img [src]="recipe.img_url" class="media-object img-responsive" style="width:60px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{ recipe.name }}</h4>
+      <p>{{ recipe.description }}</p>
+    </div>
+  </div>
+</a> -->
+<a href="#" class="list-group-item list-group-item-action">
+  <div class="media">
+    <div class="media-left media-middle">
+      <img class="media-object" [src]="recipe.img_url" alt="Recipe Image" style="width:60px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{ recipe.name }}</h4>
+      {{ recipe.description }}
+    </div>
+  </div>
+</a>

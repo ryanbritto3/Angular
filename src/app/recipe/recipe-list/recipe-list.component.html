@@ -1,0 +1,15 @@
+<!-- <div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action" *ngFor="let recipe of recipes;">
+    <img class="img-circle img-responsive" src="{{ recipe.img_url }}" alt="Recipe Image">
+    <h3>{{ recipe.name }}</h3>
+  </a>
+</div> -->
+
+
+<br>
+<h2>List of Recipes</h2>
+<hr>
+<app-recipe-item *ngFor="let recipe of recipes;" [recipe]="recipe" (click)="showDetail(recipe)">
+</app-recipe-item>
+
+<!-- <app-recipe-item></app-recipe-item> -->

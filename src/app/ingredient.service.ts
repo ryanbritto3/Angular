@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 
 import { Ingredient } from './recipe/ingredient.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IngredientService {
 
+  ingredientAdded = new Subject<Ingredient[]>();
   ingredients: Ingredient[] = [
     new Ingredient('Tomato', 5),
     new Ingredient('Onion', 7),
@@ -18,5 +20,10 @@ export class IngredientService {
 
   getIngredients(): Ingredient[] {
     return [...this.ingredients];
+  }
+
+  pushIngredient(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
+    this.ingredientAdded.next([...this.ingredients]);
   }
 }

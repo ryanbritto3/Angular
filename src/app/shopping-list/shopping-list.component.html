@@ -5,7 +5,7 @@
                 <div class="form-group">
                     <label for="recipeName">Recipe Name:</label>
                     <br>
-                    <input type="text" class="form-control" id="recipeName">
+                    <input type="text" class="form-control" id="recipeName" #recipeName>
                 </div>
 
 
@@ -14,7 +14,7 @@
                 <div class="form-group">
                     <label for="quantity">Quantity:</label>
                     <br>
-                    <input type="number" class="form-control" id="quantity">
+                    <input type="number" class="form-control" id="quantity" #quantity>
                 </div>
             </div>
         </form>
@@ -24,7 +24,7 @@
     <br>
     <div class="row">
         <div class="col-md-6">
-            <button type="button" class="btn btn-primary">Add</button>&nbsp;
+            <button type="button" class="btn btn-primary" (click)="onAdd(recipeName.value, quantity.value)">Add</button>&nbsp;
             <button type="button" class="btn btn-danger">Delete</button>&nbsp;
             <button type="button" class="btn btn-default">Clear</button>
         </div>

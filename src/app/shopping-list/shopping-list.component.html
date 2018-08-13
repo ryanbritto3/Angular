@@ -1,1 +1,33 @@
-<app-shopping-list-edit></app-shopping-list-edit>
+<app-shopping-list-edit>
+    <div class="row">
+        <form class="form-inline">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="recipeName">Recipe Name:</label>
+                    <br>
+                    <input type="text" class="form-control" id="recipeName">
+                </div>
+
+
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <br>
+                    <input type="number" class="form-control" id="quantity">
+                </div>
+            </div>
+        </form>
+        <div class="col-md-6">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <button type="button" class="btn btn-primary">Add</button>&nbsp;
+            <button type="button" class="btn btn-danger">Delete</button>&nbsp;
+            <button type="button" class="btn btn-default">Clear</button>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+</app-shopping-list-edit>

@@ -19,13 +19,6 @@ export class RecipeListComponent implements OnInit {
         'This is a western version of Indian Vada-Pav'
       )
     );
-    // this.recipes.push(
-    //   new Recipe(
-    //     'Sandwich',
-    //     'assets/Sandwich.png',
-    //     'A sandwich is a food typically consisting of vegetables, sliced cheese or meat, placed on or between slices of bread.'
-    //   )
-    // );
     this.recipes.push(
       new Recipe(
         'Pizza',

@@ -4,10 +4,10 @@
       <a class="navbar-brand" href="#">Recipe Book</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active">
+      <li [ngClass]="{'active': isRecipe}">
         <a href="#" (click)="onSelect('Recipe')">Recipe</a>
       </li>
-      <li>
+      <li [ngClass]="{'active': !isRecipe}">
         <a href="#" (click)="onSelect('Shopping-list')">Shopping List</a>
       </li>
     </ul>

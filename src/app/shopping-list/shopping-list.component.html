@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col-md-6">
             <button type="button" class="btn btn-primary" (click)="onAdd(recipeName.value, quantity.value)">Add</button>&nbsp;
-            <button type="button" class="btn btn-danger">Delete</button>&nbsp;
+            <button type="button" class="btn btn-default" [ngStyle]="dangerStyle">Delete</button>&nbsp;
             <button type="button" class="btn btn-default">Clear</button>
         </div>
         <div class="col-md-6"></div>

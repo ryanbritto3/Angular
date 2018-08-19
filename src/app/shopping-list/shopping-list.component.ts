@@ -10,6 +10,10 @@ import { Ingredient } from '../recipe/ingredient.model';
 export class ShoppingListComponent implements OnInit {
 
   constructor(private ingredientService: IngredientService) { }
+  dangerStyle = {
+    'background-color': '#d9534f',
+    'color': 'white'
+  };
 
   ngOnInit() {
   }

@@ -7,6 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Output() featureSelected = new EventEmitter<string>();
+  isRecipe = true;
   constructor() { }
 
   ngOnInit() {
@@ -14,6 +15,11 @@ export class HeaderComponent implements OnInit {
 
   onSelect(itemSelected: string) {
     this.featureSelected.emit(itemSelected);
+    if (itemSelected === 'Recipe') {
+      this.isRecipe = true;
+    } else {
+      this.isRecipe = false;
+    }
   }
 
 }

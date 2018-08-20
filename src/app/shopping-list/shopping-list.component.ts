@@ -19,6 +19,7 @@ export class ShoppingListComponent implements OnInit {
   }
 
   onAdd(ingredientName: string, quantity: number) {
-    this.ingredientService.pushIngredient(new Ingredient(ingredientName, quantity));
+    // this.ingredientService.pushIngredients([new Ingredient(ingredientName, quantity)]);
+    console.log('TODO need to add');
   }
 }

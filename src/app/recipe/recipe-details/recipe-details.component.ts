@@ -16,10 +16,15 @@ export class RecipeDetailsComponent implements OnInit, OnDestroy {
   recipe: Recipe = new Recipe(
     'Burger',
     './assets/Burger.png',
-    'This is a western version of Indian Vada-Pav'
+    'This is a western version of Indian Vada-Pav',
+    [
+      new Ingredient('Bread', 3),
+      new Ingredient('Tomato', 5),
+      new Ingredient('Onion', 4),
+      new Ingredient('Potato', 3)
+    ]
   );
   subscription: Subscription;
-  dummy = 'Dummy';
   ingredients: Ingredient[] = [];
   constructor(
     private handleData: HandleDataService,
@@ -31,6 +36,10 @@ export class RecipeDetailsComponent implements OnInit, OnDestroy {
       this.recipe = data;
     });
     this.ingredients = this.ingredientService.getIngredients();
+  }
+
+  toShoppingList() {
+    this.ingredientService.pushIngredients(this.recipe.ingredients);
   }
 
   ngOnDestroy() {

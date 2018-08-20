@@ -32,6 +32,9 @@
         <li>
           <a href="#">Delete</a>
         </li>
+        <li>
+          <a href="#" (click)="toShoppingList()">To Shopping List</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -41,7 +44,7 @@
 <div class="row">
   <div class="col-md-6">
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let i of ingredients;">
+      <li class="list-group-item" *ngFor="let i of recipe.ingredients;">
         <span class="badge">{{ i.quantity }}</span>
         {{ i.name }}
       </li>

@@ -22,8 +22,8 @@ export class IngredientService {
     return [...this.ingredients];
   }
 
-  pushIngredient(ingredient: Ingredient) {
-    this.ingredients.push(ingredient);
+  pushIngredients(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients);
     this.ingredientAdded.next([...this.ingredients]);
   }
 }

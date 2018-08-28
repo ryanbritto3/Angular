@@ -8,13 +8,13 @@ import { AppComponent } from './app.component';
 
 
 const appRoutes: Routes = [
-  { path: '', component: AppComponent },
-  { path: 'recipe', component: RecipeComponent },
-  { path: 'shoppinglist', component: ShoppingListComponent }
+  { path: '', redirectTo: 'recipes', pathMatch: 'full' },
+  { path: 'recipes', component: RecipeComponent },
+  { path: 'shopping-list', component: ShoppingListComponent }
 ];
 
 @NgModule({
-  exports: [RouterModule],
-  imports: [RouterModule.forRoot(appRoutes)]
+  imports: [RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -9,17 +9,11 @@ import { Subject } from 'rxjs';
 export class IngredientService {
 
   ingredientAdded = new Subject<Ingredient[]>();
-  ingredients: Ingredient[] = [
-    new Ingredient('Tomato', 5),
-    new Ingredient('Onion', 7),
-    new Ingredient('Capsicum', 3),
-    new Ingredient('Meat', 2),
-    new Ingredient('Spices', 4)
-  ];
+  ingredients: Ingredient[] = [];
   constructor() { }
 
   getIngredients(): Ingredient[] {
-    return [...this.ingredients];
+    return this.ingredients.slice();
   }
 
   pushIngredients(ingredients: Ingredient[]) {

@@ -6,10 +6,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class AppComponent {
-
-  selectedNav = 'Recipe';
-  onSelect(itemSelected: string) {
-    this.selectedNav = itemSelected;
-  }
-}
+export class AppComponent { }

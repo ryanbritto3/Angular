@@ -1,27 +1,27 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Recipe Book</a>
+      <a class="navbar-brand">Recipe Book</a>
     </div>
     <ul class="nav navbar-nav">
-      <li>
-        <a [routerLink]="['recipes']" [routerLinkActive]="'active'">Recipe</a>
+      <li [routerLinkActive]="'active'">
+        <a [routerLink]="['recipes']">Recipe</a>
       </li>
-      <li>
-        <a [routerLink]="['shopping-list']" [routerLinkActive]="'active'">Shopping List</a>
+      <li [routerLinkActive]="'active'">
+        <a [routerLink]="['shopping-list']">Shopping List</a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage
+        <a class="dropdown-toggle" data-toggle="dropdown">Manage
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a href="#">Fetch Data</a>
+            <a>Fetch Data</a>
           </li>
           <li>
-            <a href="#">Send Data</a>
+            <a>Send Data</a>
           </li>
         </ul>
       </li>

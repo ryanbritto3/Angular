@@ -1,6 +1,7 @@
-import { Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
-import { Observable, Subscription } from '../../../../node_modules/rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Recipe } from '../models/recipe.model';
+
 import { HandleDataService } from '../handle-data.service';
 import { Ingredient } from '../ingredient.model';
 import { IngredientService } from '../../ingredient.service';
@@ -10,39 +11,24 @@ import { IngredientService } from '../../ingredient.service';
   templateUrl: './recipe-details.component.html',
   styleUrls: ['./recipe-details.component.css']
 })
-export class RecipeDetailsComponent implements OnInit, OnDestroy {
-
-  temp: Observable<Recipe>;
-  recipe: Recipe = new Recipe(
-    'Burger',
-    './assets/Burger.png',
-    'This is a western version of Indian Vada-Pav',
-    [
-      new Ingredient('Bread', 3),
-      new Ingredient('Tomato', 5),
-      new Ingredient('Onion', 4),
-      new Ingredient('Potato', 3)
-    ]
-  );
-  subscription: Subscription;
+export class RecipeDetailsComponent implements OnInit {
+  recipe: Recipe;
   ingredients: Ingredient[] = [];
   constructor(
     private handleData: HandleDataService,
-    private ingredientService: IngredientService
+    private ingredientService: IngredientService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.subscription = this.handleData.recipeObs$.subscribe(data => {
-      this.recipe = data;
-    });
-    this.ingredients = this.ingredientService.getIngredients();
+    this.route.params
+      .subscribe(params => {
+        const id = +params['id'];
+        this.recipe = this.handleData.getRecipeByID(id);
+      });
   }
 
   toShoppingList() {
     this.ingredientService.pushIngredients(this.recipe.ingredients);
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 }

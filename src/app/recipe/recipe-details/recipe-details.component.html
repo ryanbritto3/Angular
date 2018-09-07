@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-md-12">
     <img [src]="recipe.img_url" alt="Recipe Image">
-    <!-- <h1>Hi there</h1> -->
   </div>
 </div>
 <div class="row">
@@ -27,13 +26,13 @@
       </button>
       <ul class="dropdown-menu">
         <li>
-          <a href="#">Add</a>
+          <a>Add</a>
         </li>
         <li>
-          <a href="#">Delete</a>
+          <a>Delete</a>
         </li>
         <li>
-          <a href="#" (click)="(toShoppingList())">To Shopping List</a>
+          <a (click)="(toShoppingList())">To Shopping List</a>
         </li>
       </ul>
     </div>

@@ -9,7 +9,7 @@ import { Ingredient } from './ingredient.model';
 })
 export class HandleDataService {
 
-  recipes: Recipe[] = [
+  private recipes: Recipe[] = [
     new Recipe(
       'Burger',
       './assets/Burger.png',
@@ -43,15 +43,15 @@ export class HandleDataService {
       ]
     )
   ];
-  recipeSource = new Subject<Recipe>();
+  private recipeSource = new Subject<Recipe>();
   recipeObs$ = this.recipeSource.asObservable();
   constructor() { }
 
-  updateRecipe(recipe: Recipe) {
-    this.recipeSource.next(recipe);
-  }
-
   getRecipes(): Recipe[] {
     return [...this.recipes];
+  }
+
+  getRecipeByID(id: number) {
+    return this.recipes[id];
   }
 }

@@ -1,11 +1,11 @@
 <app-shopping-list-edit>
-    <div class="row">
-        <form class="form-inline">
+    <form class="form-inline" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="row">
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="recipeName">Recipe Name:</label>
                     <br>
-                    <input type="text" class="form-control" id="recipeName" #recipeName>
+                    <input type="text" class="form-control" id="recipeName" name="recipeName" ngModel>
                 </div>
 
 
@@ -14,20 +14,21 @@
                 <div class="form-group">
                     <label for="quantity">Quantity:</label>
                     <br>
-                    <input type="number" class="form-control" id="quantity" #quantity>
+                    <input type="number" class="form-control" id="recipeQuantity" name="recipeQuantity" ngModel>
                 </div>
             </div>
-        </form>
-        <div class="col-md-6">
+
+            <div class="col-md-6">
+            </div>
         </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-md-6">
-            <button type="button" class="btn btn-primary" (click)="onAdd(recipeName.value, quantity.value)">Add</button>&nbsp;
-            <button type="button" class="btn btn-default" [ngStyle]="dangerStyle">Delete</button>&nbsp;
-            <button type="button" class="btn btn-default">Clear</button>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary">Add</button>&nbsp;
+                <button type="button" class="btn btn-default" [ngStyle]="dangerStyle">Delete</button>&nbsp;
+                <button type="button" class="btn btn-default">Clear</button>
+            </div>
+            <div class="col-md-6"></div>
         </div>
-        <div class="col-md-6"></div>
-    </div>
+    </form>
 </app-shopping-list-edit>
